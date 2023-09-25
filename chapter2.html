@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conversation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            position: relative;
+            height: 90vh;
+            width: 90vw;
+            z-index: -1;
+            background-image: url(Pics/GatewayOfINDIAandCHHATRAPATIShivaj.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .char {
+            position: fixed;
+            background: none;
+            width: 500px;
+            height: 800px;
+            z-index: 1;
+        }
+
+        .char1 {
+            background-size: 35em 37em;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+            background-image: url(characters/Detective.png);
+            transform: translate(-15%,-5%) scaleX(-1);
+        }
+
+        .char2 {
+            right: 0%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: 0 80%;
+            background-image: url(characters/male2.png);
+            transform: translate(10%) scaleX(1);
+        }
+        
+        .chat-container {
+            position: absolute;
+            width: 100vw;
+            height: auto;
+            overflow-y: hidden;
+            background-color: #00000000;
+            bottom: 40vh;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 2;
+        }
+
+        .message {
+            padding: .5em;
+            min-height: 2em;
+            max-height: fit-content;
+            width: 50vw;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 5px ridge goldenrod;
+            background-color: #00000044;
+            font: 1.5em 'Times New Roman';
+            font-style: bold;
+            color: #ffdf8d;
+        }
+
+        .user-message {
+            transform: translate(18vw);
+            border-bottom-left-radius: 0;
+        }
+        
+        .other-message {
+            transform: translate(27vw);
+            border-bottom-right-radius: 0;
+        }
+        
+        .next_btn {
+            position: fixed;
+            width: 7em;
+            padding: .5em;
+            margin: 2em;
+            font: 2em 'Times New Roman';
+            font-weight: bold;
+            color: #ffdf8d;
+            border: 5px ridge goldenrod;
+            border-radius: 50px;
+            background-color: #000000a8;
+            transform: translate(35vw, 0vh);
+            z-index: 6;
+        }
+
+        .next_btn:hover {
+            background-color: #0000003e;
+            cursor: pointer;
+        }
+
+        .instr {
+            position: absolute;
+            width: 100vw;
+            padding: .5em;
+            padding-left: 2em;
+            padding-right: 0em;
+            margin-top: 2em;
+            font: 2em 'Times New Roman';
+            font-weight: bold;
+            color: #ffdf8d;
+            background-color: #00000099;
+            animation: blink 3s linear infinite;
+        }
+
+        #lft {
+            position: fixed;
+            background-color: #00000000;
+            height: 100vh;
+            width: 100vw;
+            z-index: 4;
+        }
+
+        @keyframes blink {
+            0% {
+                color: #00000000;
+            }
+
+            25% {
+                color: #ffdf8d;
+            }
+
+            50% {
+                color: #ffdf8d;
+            }
+
+            100% {
+                color: #00000000;
+            }
+        }
+    </style>
+    <script>
+        let messageIndex = 0;
+        const messages = [
+            { text: "Hello, Detective Bakshi! we need your help", isUser: false },
+            { text: "what happened tell me about the case", isUser: true },
+            {text: "A a famous jewlery designer form jaipur has mysteriously disappeared",isUser: false },
+            { text: "Tell me about his appearance", isUser: true },
+            { text: "He is tall, fat and fair , you have to complete this level to solve this case", isUser: false },
+            { text: "Ok! let me investigate this case", isUser: true },
+    ]
+        function addMessage() {
+            document.getElementById('inst').removeAttribute('class');
+            document.getElementById('inst').innerHTML = '';
+            if (messageIndex < messages.length && messageIndex != -1) {
+                const chatContainer = document.getElementById("chat-container");
+                const message = messages[messageIndex];
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+                if (message.isUser) {
+                    messageDiv.classList.add("user-message");
+                } else {
+                    messageDiv.classList.add("other-message");
+                }
+                messageDiv.textContent = message.text;
+                chatContainer.appendChild(messageDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                messageIndex++;
+            } else if (messageIndex != -1) {
+                const chatContainer = document.getElementById("chat-container");
+                const message = messages[messageIndex];
+                const messageDiv = document.createElement("button");
+                messageDiv.classList.add("next_btn");
+                messageDiv.textContent = 'NEXT...';
+                chatContainer.appendChild(messageDiv);
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                messageIndex = -1;
+            } else{
+                document.location.href='Tennis/tennis.html';
+            }
+        }
+        function scrollBottom() {
+            window.scrollTo(0, 99999);
+        }
+        if (document.addEventListener)
+            document.addEventListener("DOMContentLoaded", scrollBottom, false)
+        else if (window.attachEvent)
+            window.attachEvent("onload", scrollBottom);
+    </script>
+</head>
+
+<body id="cor">
+    <div id="lft" onclick="scrollBottom();addMessage()">
+    </div>
+    <div class="chat-container" id="chat-container">
+    </div>
+    <div class="instr" id="inst">Tap to Continue...</div>
+    <div class="char char1"></div>
+    <div class="char char2"></div>
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-image: url(Pics/temple5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: -.1em -3em;
+        }
+
+        #SIHLOGO {
+            font: 1.5em 'times new roman';
+            font-weight: bold;
+            margin: 1.5em;
+            margin-left: 2em;
+            color: #483001;
+        }
+
+        #login {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            font: 1.7em arial;
+            font-weight: bold;
+            top: 0.2em;
+            right: .5em;
+        }
+
+        #C_img {
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            border: 3px solid burlywood;
+            background-color: #00000000;
+            transform: translate(0em, .7em);
+        }
+
+        #GLOGO {
+            position: absolute;
+            right: 0%;
+            top: 20vh;
+            width: 20em;
+            height: 20em;
+        }
+
+        #ind {
+            position: absolute;
+            top: -80%;
+            right: -140%;
+            width: 500%;
+        }
+
+        #eni {
+            position: absolute;
+            top: -10%;
+            right: -140%;
+            width: 500%;
+        }
+
+
+        #about {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 1em;
+            color: #e6ba81;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        #main {
+            position: absolute;
+            top: 8em;
+            left: 4em;
+            width: 10em;
+            height: 10em;
+        }
+
+        button {
+            margin: .5em;
+            width: 10em;
+            height: auto;
+            font: 3em jokerman;
+            color: #da910d;
+            background-color: rgb(255, 211, 154);
+            text-align: center;
+            border: 5px ridge #da9100;
+            border-radius: 20px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: burlywood;
+        }
+
+        button::after {
+            content: '';
+            position: absolute;
+            left: 1%;
+            width: 1.4em;
+            height: 2em;
+            background-image: url(Pics/Ar1.png);
+            background-size: 200px;
+            background-position: 0px -135px;
+            background-repeat: no-repeat;
+
+            transform: rotate(45deg) translate(-50px, 50px);
+
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #lgin {
+            color: #483001;
+            text-decoration: none;
+            margin-right: .3em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+    <script>
+        function aud() {
+            console.log(localStorage.getItem("lastname"));
+        };
+    </script>
+</head>
+
+<body onload="aud();">
+    <div id="SIHLOGO">SMART INDIA HACKATHON</div>
+    <div id="GLOGO">
+        <img id="ind" src="Pics/indian.png">
+        <img id="eni" src="Pics/engima.png">
+    </div>
+    <div id="main">
+        <ul>
+            <li><BUtton>CONTINUE</BUtton></li>
+            <LI id="n_g"> <button onclick="window.location.href = 'chapter1.html';">NEW GAME</button></LI>
+            <LI id="chap"><button onclick="window.location.href = 'AllChapter.html';">CHAPTERS</button></LI>
+            <!-- <LI id="seti"><button onclick=""></button></LI> -->
+        </ul>
+    </div>
+    <span id="login"><a href="login.html" id="lgin">LOGIN <img id="C_img" src="Pics/icons8-contacts.svg"
+                alt=""></a></span>
+    <a id="about" href="about/about.html">ABOUT US</a>
+</body>
+
+</html>

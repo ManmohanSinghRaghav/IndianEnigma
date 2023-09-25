@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        html {
+            box-sizing: border-box;
+            background-color: rgb(0, 0, 0);
+        }
+
+        *,S
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        p {
+            color: aliceblue;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0px 0px 10px 1px goldenrod;
+            margin: 8px;
+        }
+
+        h2 {
+            color: gold;
+        }
+
+        .about-section {
+            padding: 40px;
+            text-align: center;
+            font-size: 25px;
+            border-bottom: 5px solid gold;
+            background-color: goldenrod;
+            color: gold;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            font-weight: bold;
+            color: goldenrod;
+        }
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: rgb(255, 255, 255);
+            background-color: goldenrod;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: rgb(186, 157, 83);
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="about-section">
+        <h1>CHAPTERS</h1>
+    </div>
+
+    <h2 style="text-align:center"></h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="Pics/GatewayOfINDIAandCHHATRAPATIShivaj.png" alt="" style="width:100%">
+                <div class="container">
+                    <h2>Chapter 1</h2>
+                    <p class="title">The Precious Heist in Mumbai</p>
+                    <p>adventure begins in Mumbai, India's financial capital, where a priceless artifact has vanished
+                        from a renowned museum. Dive into the bustling streets of Mumbai, explore iconic landmarks...
+                    </p>
+                    <p>High Score: 00</p>
+                    <p><button class="button"  onclick="window.location.href='chapter1.html'">Play</button></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="Pics/mysterious1.png" alt="" style="width:100%">
+                <div class="container">
+                    <h2>Chapter 2</h2>
+                    <p class="title">The Vanishing Act in Jaipur's Pink City</p>
+                    <p>Your next destination is Jaipur, the Pink City, where a famous jewelry designer has mysteriously
+                        disappeared. Immerse yourself in the vibrant colors of Jaipur's streets, interact with unique
+                        characters...</p>
+                    <p>High Score: 00</p>
+                    <p><button class="button"  onclick="window.location.href='chapter2.html'">Play</button></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="column">
+            <div class="card">
+                <img src="Pics/mysterious2.png" alt="" style="width:100%">
+                <div class="container">
+                    <h2>Chapter 3</h2>
+                    <p class="title">The Cryptic Codes of Kolkata's Streets</p>
+                    <p>Kolkata presents a new challenge - a string of high-profile robberies with baffling clues left
+                        behind. Navigate Kolkata's bustling streets, interview suspects, and follow the trail of clues.
+                        To advance...</p>
+                    <p>High Score: 00</p>
+                    <p><button class="button" onclick="window.location.href=''">Play</button></p>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
